@@ -48,6 +48,13 @@ tr:hover {
 td {
   font-size: 12px;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  color: black;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import Issue from "./Issue.jsx";
 
 class IssueList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      issues: []
-    };
-  }
+  state = {
+    issues: []
+  };
+
   componentDidMount() {
     fetch("https://api.github.com/repos/facebook/create-react-app/issues")
       .then(response => response.json())
@@ -26,7 +24,7 @@ class IssueList extends Component {
           {issues.length > 0 ? (
             issues.map(issue => <Issue issue={issue} key={issue.id} />)
           ) : (
-            <li>Empty</li>
+            <h3>Empty</h3>
           )}
         </p>
       </div>
