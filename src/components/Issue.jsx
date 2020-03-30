@@ -2,13 +2,18 @@ import React from "react";
 import IssueList from "./IssueList";
 
 const Issue = props => {
-  console.log(props);
   return (
     <div>
-      <p className="issueLink">
-        <a href={props.issue.url}>{props.issue.title}</a>
-      </p>
-      <p className="issueBody"> {props.issue.body}</p>
+      <table>
+        <tr>
+          <th>
+            <a href={props.issue.html_url}>{props.issue.title}</a>
+          </th>
+        </tr>
+        <tr>
+          <td className="issueBody"> {props.issue.body}</td>
+        </tr>
+      </table>
     </div>
   );
 };

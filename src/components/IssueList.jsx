@@ -10,7 +10,7 @@ class IssueList extends Component {
   }
   componentDidMount() {
     fetch("https://api.github.com/repos/facebook/create-react-app/issues")
-      .then(res => res.json())
+      .then(response => response.json())
       .then(result => {
         this.setState({
           issues: result
@@ -22,13 +22,13 @@ class IssueList extends Component {
     const { issues } = this.state;
     return (
       <div>
-        <ul>
+        <p>
           {issues.length > 0 ? (
             issues.map(issue => <Issue issue={issue} key={issue.id} />)
           ) : (
             <li>Empty</li>
           )}
-        </ul>
+        </p>
       </div>
     );
   }

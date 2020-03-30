@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Issues</h1>
+        <h1>React Issues from Github</h1>
         <IssueList />
       </header>
     </div>
