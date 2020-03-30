@@ -1,14 +1,16 @@
 import React from "react";
+import IssueList from "./IssueList";
 
-function Issue(props) {
-  const { issue } = props;
+const Issue = props => {
+  console.log(props);
   return (
     <div>
-      <p>{issue.title}</p>
-      <p>{issue.url}</p>
-      <p>{issue.body}</p>
+      <p className="issueLink">
+        <a href={props.issue.url}>{props.issue.title}</a>
+      </p>
+      <p className="issueBody"> {props.issue.body}</p>
     </div>
   );
-}
+};
 
 export default Issue;

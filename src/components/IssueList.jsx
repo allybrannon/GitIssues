@@ -2,29 +2,35 @@ import React, { Component } from "react";
 import Issue from "./Issue.jsx";
 
 class IssueList extends Component {
-  state = {
-    issues: []
-  };
-
-  loadData = async () => {
-    const response = await fetch(
-      "https://api.github.com/repos/facebook/create-react-app/issues"
-    );
-    const data = response.json();
-    console.log(response);
-    return data;
-  };
-
-  async componentDidMount() {
-    const userData = await this.loadData();
-
-    this.setState({
-      userData: userData
-    });
+  constructor(props) {
+    super(props);
+    this.state = {
+      issues: []
+    };
   }
+  componentDidMount() {
+    fetch("https://api.github.com/repos/facebook/create-react-app/issues")
+      .then(res => res.json())
+      .then(result => {
+        this.setState({
+          issues: result
+        });
+      });
+  }
+
   render() {
-    const { title } = this.state;
-    return <p>Can't figure this one out!</p>;
+    const { issues } = this.state;
+    return (
+      <div>
+        <ul>
+          {issues.length > 0 ? (
+            issues.map(issue => <Issue issue={issue} key={issue.id} />)
+          ) : (
+            <li>Empty</li>
+          )}
+        </ul>
+      </div>
+    );
   }
 }
 export default IssueList;
