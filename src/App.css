@@ -27,33 +27,11 @@
 .App-link {
   color: #61dafb;
 }
-
-table {
-  border-collapse: collapse;
-  width: 85%;
-  text-align: center;
-  margin-left: 7.5%;
-}
-
-tr,
-td,
-th {
-  border: 1px solid #999;
-  padding: 0.5rem;
-  text-align: left;
-}
-tr:hover {
-  background-color: #f0ebeb;
-}
-td {
-  font-size: 12px;
-}
-a {
-  text-decoration: none;
-  color: black;
+ul {
+  list-style: none;
 }
 a:visited {
-  color: black;
+  color: #0000ee;
 }
 @keyframes App-logo-spin {
   from {

@@ -2,23 +2,25 @@ import React, { Component } from "react";
 
 class IssueDetail extends Component {
   state = {
-    issue_number: []
+    issueDetails: []
   };
-  componentDidMount() {
+  async componentDidMount() {
     const { issue_number } = this.props.match.params;
-    fetch(
+    const response = await fetch(
       `https://api.github.com/repos/facebook/create-react-app/issues/${issue_number}`
-    ).then(issue_number => {
-      this.setState({
-        issue_number
-      });
+    );
+    const data = await response.json();
+    this.setState({
+      issueDetails: data
     });
   }
 
   render() {
+    const { issueDetails } = this.state;
     return (
       <div>
-        <p>Did i do it?</p>
+        <p>{issueDetails.title}</p>
+        <p>{issueDetails.body}</p>
       </div>
     );
   }

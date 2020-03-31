@@ -19,15 +19,15 @@ class IssueList extends Component {
   render() {
     const { issues } = this.state;
     return (
-      <div>
-        <h3>
-          {issues.length > 0 ? (
-            issues.map(issue => <IssueDetail issue={issue} key={issue.id} />)
-          ) : (
-            <p>Empty</p>
-          )}
-        </h3>
-      </div>
+      <ul>
+        {issues.map(issue => (
+          <li key={issue.id}>
+            {issue.title}
+            <br />
+            <a href={`/issue/${issue.number}`}>View Issue Details</a>
+          </li>
+        ))}
+      </ul>
     );
   }
 }
