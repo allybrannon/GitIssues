@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Issue from "./Issue.jsx";
+import IssueDetail from "./IssueDetail.jsx";
 
 class IssueList extends Component {
   state = {
@@ -20,13 +20,13 @@ class IssueList extends Component {
     const { issues } = this.state;
     return (
       <div>
-        <p>
+        <h3>
           {issues.length > 0 ? (
-            issues.map(issue => <Issue issue={issue} key={issue.id} />)
+            issues.map(issue => <IssueDetail issue={issue} key={issue.id} />)
           ) : (
-            <h3>Empty</h3>
+            <p>Empty</p>
           )}
-        </p>
+        </h3>
       </div>
     );
   }
