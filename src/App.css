@@ -33,6 +33,20 @@ ul {
 a:visited {
   color: #0000ee;
 }
+
+p {
+  text-align: left;
+}
+
+.issueTitle,
+.issueBody {
+  border: 1px solid black;
+}
+
+.issueTitle {
+  font-weight: bold;
+  text-align: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

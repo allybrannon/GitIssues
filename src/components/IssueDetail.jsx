@@ -19,8 +19,8 @@ class IssueDetail extends Component {
     const { issueDetails } = this.state;
     return (
       <div>
-        <p>{issueDetails.title}</p>
-        <p>{issueDetails.body}</p>
+        <p className="issueTitle">{issueDetails.title}</p>
+        <p className="issueBody">{issueDetails.body}</p>
       </div>
     );
   }
